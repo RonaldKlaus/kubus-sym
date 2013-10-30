@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>KuBuS {% block title %}{% endblock %}</title>
+        {% stylesheets '`@HUBackendBundle/Resources/public/css/*' %}
+            <link rel="stylesheet" href="{{ asset('bootstrap.min.css') }}" />
+        {% endstylesheets %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <header>
+            <nav> Navigation</nav>
+            <ul> Nutzer
+                <li><a href="{{ path('user_index') }}">Alle Personen</a> </li>
+                <li><a href="{{ path('user_create') }}">Neue Person</a> </li>
+            </ul>
+        </header>
+        <content>
+            {% block body %}{% endblock %}
+        </content>
+        {% javascripts '@HUBackendBundle/Resources/public/js/*' %}
+            <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+            <script src="{{ asset('bootstrap.min.js') }}" type="text/javascript"></script>
+        {% endjavascripts %}
+    </body>
+</html>

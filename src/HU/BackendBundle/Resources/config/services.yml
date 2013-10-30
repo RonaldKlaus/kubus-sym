@@ -1,0 +1,7 @@
+parameters:
+#    hu_backend.example.class: HU\BackendBundle\Example
+
+services:
+#    hu_backend.example:
+#        class: %hu_backend.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

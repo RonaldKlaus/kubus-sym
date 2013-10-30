@@ -1,0 +1,103 @@
+{% extends 'HUBackendBundle::layout.html.twig' %}
+	
+{% block title %}- Registrierung{% endblock %}
+
+{% block body %}
+	<h1>Registrierung bei KuBuS</h1>
+	<p>Herzlich Willkommen bei KuBuS, dem Kursbuchsungssystem der Humboldt Graduate School. Um sich für Kurse anmelden zu können, bitten wir den Registrierungsvorgang zu durchlaufen. 
+	Es dauert nur wenige Minuten</p>
+	{% if role_id == '500' %}
+	<p>Sie sind also Interessiert</p>
+
+	{% elseif role_id == '400' %}
+		<form role="form">
+		<div class='panel panel-default'>
+			<div class='panel-heading'><div class='panel-title'>Doktorand-Grunddaten</div></div>
+			<div class='panel-body'>
+				<div class='row form-group'>
+					<div class='col-lg-3'>
+						<select name='anrede_id' class="form-control">
+							<option>Anrede*</option>
+							<option value='1'>Herr</option>
+							<option value='2'>Frau</option>					
+							<option value='3'>Firma</option>
+						</select>
+					</div>
+					<div class='col-lg-3'>
+						<select name='title' class="form-control">
+							<option>Titel</option>
+							<option value='1'>PhD</option>
+							<option value='2'>Dr.</option>
+						</select>
+					</div>
+					<div class="col-lg-3"><input type="text" name='p_vorname' class="form-control" placeholder="Vorname*"></div>
+					<div class="col-lg-3"><input type="text" name='p_nachname' class="form-control" placeholder="Nachname*"></div>
+				</div>
+
+				<div class='row form-group'>
+					<div class="col-lg-3"><input type="text" class="form-control" placeholder="Straße"></div>
+					<div class="col-lg-3"><input type="text" class="form-control" placeholder="Postleitzahl"></div>
+					<div class="col-lg-3"><input type="text" class="form-control" placeholder="Ort"></div>
+					<div class="col-lg-3"><input type="text" class="form-control" placeholder="Land"></div>
+				</div>
+
+				<div class='row form-group'>
+					<div class="col-lg-6"><input type="text" class="form-control" placeholder="Hochschule*"></div>
+					<div class="col-lg-6"><input type="text" class="form-control" placeholder="Fakultät*"></div>
+				</div>
+
+				<div class='row form-group'>
+					<div class="col-lg-6"><input type="date" class="form-control" placeholder="Datum Promotionszulassung"></div>
+					<div class="col-lg-6"><input type="text" class="form-control" placeholder="Wissenschaftsbereich"></div>
+				</div>
+				<div class='row form-group'>
+					<div class='col-lg-3'>
+						<button type="button" class="form-control btn btn-default">Anmeldung abschließen</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		</form>
+	{% else %}
+		<form> 
+		<p> Bitte wählen Sie ihre Rolle</p>
+			<div class='row form-group'>
+				<div class='col-lg-3'>
+					<select class="form-control">
+						<option>Ich bin...</option>
+						<option value='400'>Interessent</option>
+						<option value='500'>Doktorand</option>
+						<option value='350'>Post-Doktorand</option>
+						<option value='325'>Supervisor</option>					
+					</select>
+				</div>
+				<div class='col-lg-3'>
+					<select class="form-control">
+						<option>Promotionsprogramm*</option>
+						<option value='0'>Ich bin nicht Teil eines Programms.</option>
+						<option value='1'>ZIBI</option>
+						<option value='2'>PP</option>
+						<option value='3'>Programm</option>					
+					</select>
+				</div>
+			</div>
+			<div class='row form-group'>
+				<div class='col-lg-3'>
+					<button type="button" class="form-control btn btn-default">Weiter</button>
+				</div>
+			</div>
+		</form>
+	{% endif %}
+{% endblock %}
+
+{% block sidebar %}
+<div class='panel panel-default'>
+	<div class='panel-heading'><h3 class='panel-title'>Informationen</h3></div>
+	<div class='panel-body'>
+		<p>Sie können sich entweder als Promotionsinteressent oder als Doktorand anmelden. Hierzu gibt es folgendes zu beachten:</p>
+		<h4>Promotionsinteressent</h4>
+
+		<h4>Doktorand</h4>
+	</div>
+</div>
+{% endblock %}

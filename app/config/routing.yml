@@ -1,0 +1,8 @@
+hu_frontend:
+    resource: "@HUFrontendBundle/Resources/config/routing.yml"
+    prefix:   /
+
+hu_backend:
+    resource: "@HUBackendBundle/Resources/config/routing.yml"
+    prefix:   /a/
+

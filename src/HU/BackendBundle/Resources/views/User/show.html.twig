@@ -1,0 +1,8 @@
+{% extends 'HUBackendBundle::layout.html.twig' %}
+	
+{% block title %}- Nutzerdaten {% endblock %}
+
+{% block body %}
+	<h2>Ronald Klaus</h2>
+	{{ include('HUBackendBundle:User:_details.html.twig', {'user': user} ) }}
+{% endblock %}

@@ -1,0 +1,50 @@
+_welcome:
+    pattern: /welcome
+    defaults: { template: 'HUBackendBundle:welcome.html.twig' }
+
+# Login
+permission_login:
+    pattern: /login/
+    defaults: { _controller: HUBackendBundle:Permission:login}
+
+permission_logout:
+    pattern: /logout/
+    defaults: { _controller: HUBackendBundle:Permission:logout }
+
+persission_check:
+    pattern: /check_permission/{id}/{action}
+    defaults: { _controller: HUBackendBundle:Permission:check_permission }
+
+# User
+user_index:
+    pattern:   /User/index/{id}/{min_number}/{max_number}
+    defaults: { _controller: HUBackendBundle:User:index, id: id, min_number: 1, max_number: 1000 }
+
+user_create:
+    pattern:  /User/create/{id}
+    defaults: { _controller: HUBackendBundle:User:create, id: id  }
+
+user_update:
+    pattern:  /User/update/{id}
+    defaults: { _controller: HUBackendBundle:User:update, id: id }
+
+user_delete:
+    pattern:  /User/delete/{id}
+    defaults: { _controller: HUBackendBundle:User:delete, id: id }
+
+user_show:
+    pattern:  /User/show/{id}
+    defaults: { _controller: HUBackendBundle:User:show, id: id }
+
+user_edit:
+    pattern:  /User/edit/{id}
+    defaults: { _controller: HUBackendBundle:User:edit, id: id }
+
+user_register:
+    pattern:  /User/register/{role_id}/{pp_id}
+    defaults: { _controller: HUBackendBundle:User:register }
+
+# Courses
+
+# Events
+

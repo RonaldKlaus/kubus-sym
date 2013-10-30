@@ -1,0 +1,60 @@
+{% extends 'HUBackendBundle::layout.html.twig' %}
+	
+{% block title %}- Alle Personen{% endblock %}
+{% block body %}
+<h3>Personenübersicht</h3>
+<p>Das ist die Übersicht für die Personensuche. Um die Ergebnismenge einzuschränken nutzen Sie bitte die Suche auf der rechten Seite.</p>
+<div class="table">
+  <table class="table table-hover">
+    <thead><tr><th>Id</th><th>Name</th><th>Rolle</th><th>Programm</th></tr></thead>
+    <tbody>
+    	<tr><td>1</td><th>Ronald Klaus</th><td>Admininitrator</td><td>Kein Programm</td></tr>
+    	<tr><td>2</td><th>Max Mustermann</th><td>Nutzer</td><td>ZIBI</td></tr>
+    </tbody>
+  </table>
+</div>
+<ul class="pagination text-center">
+  <li class="disabled"><a href="#">&laquo;</a></li>
+  <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+  <li><a href="#">&raquo;</a></li>
+</ul>
+
+{% endblock %}
+
+{% block sidebar %}
+	<div class='panel panel-default'>
+		<div class='panel-heading'><h3 class='panel-title'>Suche</h3></div>
+		<div class='panel-body'>
+			<form role="form">
+		  <div class="form-group">
+		    <label  class="sr-only" for="inputSearch">Name</label>
+		    <input type="name" class="form-control" id="inputSearch" placeholder="Name">
+		    <div class="checkbox">
+			    <label>
+			      <input type="checkbox"> Admin
+			    </label>
+			  </div>
+			  <div class="checkbox">
+			    <label>
+			      <input type="checkbox"> Verwalterin
+			    </label>
+			  </div>
+			  <div class="checkbox">
+			    <label>
+			      <input type="checkbox"> Nutzerin
+			    </label>
+		  	</div>
+		  </div>
+		  <div class="form-group">
+			  <div class="col-lg-10">
+			    <button type="submit" class="btn btn-default">Suche</button>
+			  </div>
+			</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
